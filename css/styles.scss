@@ -1,0 +1,170 @@
+$color-primary: #c1d0e6;
+$color-primary-lighten: lighten(
+  $color: #c1d0e6,
+  $amount: 10%,
+);
+$color-primary-darken: darken(
+  $color: #c1d0e6,
+  $amount: 10%,
+);
+
+$color-text: #323232;
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #c1d0e6;
+}
+
+.game-content {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
+
+.container {
+  max-width: 1250px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.header {
+  padding: 15px 0;
+
+  &__title {
+    text-align: center;
+    margin: 0;
+    color: $color-text;
+  }
+}
+
+.game-section {
+  padding-top: 50px;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 20px;
+    padding-bottom: 30px;
+  }
+}
+
+.game-menu {
+  margin: 0;
+  margin-bottom: 15px;
+  text-align: center;
+  color: $color-text;
+
+  &__title {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    color: $color-text;
+  }
+
+  &__difficult-btn {
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    margin: 0;
+    padding: 15px 20px;
+    background: transparent;
+    background: $color-primary-darken;
+    color: #323232;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+
+    &:hover {
+      background: $color-primary-lighten;
+    }
+  }
+}
+
+.game-table {
+  max-width: 500px;
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.game-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 23%;
+  margin: 1%;
+  width: 50px;
+  height: 100px;
+  aspect-ratio: 1;
+  background: $color-primary-darken;
+  color: #323232;
+  border-radius: 5px;
+  transition: all 0.3s linear;
+
+  &:hover {
+    background: $color-primary-lighten;
+  }
+
+  & i {
+    font-size: 40px;
+    display: none;
+  }
+
+  & i + i {
+    display: block;
+  }
+
+  &.flip {
+    background: $color-primary-lighten !important;
+    color: #323232;
+    transform: perspective(100px) rotateY(180deg);
+
+    &.successfully {
+      background: #d0ffba !important;
+
+      &.win {
+        scale: 1.2;
+      }
+    }
+
+    & i {
+      display: block;
+    }
+
+    & i + i {
+      display: none;
+    }
+  }
+}
+
+.restart-btn {
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  margin-top: 20px;
+  padding: 15px 20px;
+  background: transparent;
+  background: $color-primary-darken;
+  color: #323232;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+
+  &:hover {
+    background: $color-primary-lighten;
+  }
+}
