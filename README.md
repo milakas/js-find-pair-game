@@ -1,1 +1,3 @@
-![Screenshot](https://github.com/milakas/js-find-pair-game/blob/main/img/preview.png)
+##Find pairs game
+
+Link [drum-kit-milakas.vercel.app](https://drum-kit-milakas.vercel.app) to play it in your browser.
